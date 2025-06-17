@@ -8,10 +8,9 @@ screen = pg.display.set_mode(SIZE)
 pg.init()
 pg.display.set_caption("Yunchan Practice Assistant")
 
-# Initialize pyttsx3 engine
 engine = pyttsx3.init()
-engine.setProperty('rate', 150)  # Set speech rate
-engine.setProperty('volume', 1.0)  # Set volume
+engine.setProperty('rate', 150)
+engine.setProperty('volume', 1.0)
 
 def text(text, pos, size, color):
     font = pg.font.Font(None, size)
@@ -21,7 +20,6 @@ def text(text, pos, size, color):
     screen.blit(text, textpos) 
 
 def speak(text):
-    """Speak the given text in real-time."""
     engine.say(text)
     engine.runAndWait()
 
@@ -32,6 +30,7 @@ def main():
 
     start_time = dt.datetime.now()
     start_time = start_time.strftime("%H:%M")
+    changed = False
 
     while run:
         for event in pg.event.get():
@@ -40,17 +39,23 @@ def main():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_RETURN:
                     count += 1
-                    speak(f"{count}")
+                    if count >= 0:
+                        changed = f"{count}"
+                    else:
+                        changed = f"negative {abs(count)}"
                 if event.key == pg.K_SPACE:
                     if count > 0:
                         count = 0
-                        speak("reset")
+                        changed = "reset"
                     else:
                         count -= 1
                     if count < 0:
-                        speak(f"negative {abs(count)}, half speed")
+                        if count == -1:
+                            changed = "negative 1 half speed"
+                        else:
+                            changed = f"negative {abs(count)}"
                     else:
-                        speak(f"{count}")
+                        changed = f"{count}"
 
         screen.fill((255, 255, 255))  
         text("Yunchan Practice Assistant", (900, 100), 175, (0, 0, 0))
@@ -61,7 +66,10 @@ def main():
             text("Done!", (900, 300), 200, (0, 255, 0))
         text(f"Count: {count}", (900, 650), 400, (0, 0, 0))
         pg.display.flip()  
-        clock.tick(FPS)  
+        clock.tick(FPS) 
+        if changed != False:
+            speak(changed)
+            changed = False 
         if count == 3:
             speak("Done, next phrase")
             count = 0
