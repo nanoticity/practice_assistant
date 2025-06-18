@@ -12,34 +12,34 @@ pg.display.set_caption("Yunchan Practice Assistant")
 # Initialize sounds dictionary with all files from sounds directory
 if __name__ == "__main__":
         sounds = {
-        "done_next_phrase": mixer.Sound("web/sounds/done_next_phrase.ogg"),
-        "learn_it": mixer.Sound("web/sounds/learn_it.ogg"),
-        "half_speed": mixer.Sound("web/sounds/half_speed.ogg"),
-        "negative_1": mixer.Sound("web/sounds/negative_1.ogg"),
-        "negative_2": mixer.Sound("web/sounds/negative_2.ogg"),
-        "negative_3": mixer.Sound("web/sounds/negative_3.ogg"),
-        "negative_4": mixer.Sound("web/sounds/negative_4.ogg"),
-        "negative_5": mixer.Sound("web/sounds/negative_5.ogg"),
-        "0": mixer.Sound("web/sounds/0.ogg"),
-        "1": mixer.Sound("web/sounds/1.ogg"),
-        "2": mixer.Sound("web/sounds/2.ogg"),
-        "3": mixer.Sound("web/sounds/3.ogg"),
-        "reset": mixer.Sound("web/sounds/reset.ogg")
+        "done_next_phrase": mixer.Sound("docs/sounds/done_next_phrase.ogg"),
+        "learn_it": mixer.Sound("docs/sounds/learn_it.ogg"),
+        "half_speed": mixer.Sound("docs/sounds/half_speed.ogg"),
+        "negative_1": mixer.Sound("docs/sounds/negative_1.ogg"),
+        "negative_2": mixer.Sound("docs/sounds/negative_2.ogg"),
+        "negative_3": mixer.Sound("docs/sounds/negative_3.ogg"),
+        "negative_4": mixer.Sound("docs/sounds/negative_4.ogg"),
+        "negative_5": mixer.Sound("docs/sounds/negative_5.ogg"),
+        "0": mixer.Sound("docs/sounds/0.ogg"),
+        "1": mixer.Sound("docs/sounds/1.ogg"),
+        "2": mixer.Sound("docs/sounds/2.ogg"),
+        "3": mixer.Sound("docs/sounds/3.ogg"),
+        "reset": mixer.Sound("docs/sounds/reset.ogg")
     }
 else:
         sounds = {
-        "done_next_phrase": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/done_next_phrase.ogg"),
-        "half_speed": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/half_speed.ogg"),
-        "negative_1": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/negative_1.ogg"),
-        "negative_2": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/negative_2.ogg"),
-        "negative_3": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/negative_3.ogg"),
-        "negative_4": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/negative_4.ogg"),
-        "negative_5": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/negative_5.ogg"),
-        "0": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/0.ogg"),
-        "1": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/1.ogg"),
-        "2": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/2.ogg"),
-        "3": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/3.ogg"),
-        "reset": mixer.Sound("/lib/python3.12/site-packages/assistant/web/sounds/reset.ogg")
+        "done_next_phrase": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/done_next_phrase.ogg"),
+        "half_speed": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/half_speed.ogg"),
+        "negative_1": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/negative_1.ogg"),
+        "negative_2": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/negative_2.ogg"),
+        "negative_3": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/negative_3.ogg"),
+        "negative_4": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/negative_4.ogg"),
+        "negative_5": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/negative_5.ogg"),
+        "0": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/0.ogg"),
+        "1": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/1.ogg"),
+        "2": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/2.ogg"),
+        "3": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/3.ogg"),
+        "reset": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/reset.ogg")
     }
 
 

@@ -56,7 +56,7 @@
           pyodide.unpackArchive(zipBinary, "tar", { extractDir: "/lib/python3.12/site-packages/assistant" });
           pyodide.runPythonAsync(`
 import sys
-sys.path.append('/lib/python3.12/site-packages/assistant/web')
+sys.path.append('/lib/python3.12/site-packages/assistant/docs')
 import main
 main.main()
 `)
