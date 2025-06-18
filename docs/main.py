@@ -2,7 +2,7 @@ import pygame as pg
 import pygame.mixer as mixer
 import asyncio
 
-SIZE = [1600, 1097]
+SIZE = [1600, 900]
 FPS = 60
 screen = pg.display.set_mode(SIZE)
 pg.init()

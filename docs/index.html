@@ -65,6 +65,23 @@
     }
     </style>
     <script type="text/javascript">
+        // Wake Lock API to prevent screen sleep
+        let wakeLock = null;
+        async function requestWakeLock() {
+            try {
+                if ('wakeLock' in navigator) {
+                    wakeLock = await navigator.wakeLock.request('screen');
+                }
+            } catch (err) {
+                console.warn('Wake Lock not supported or failed:', err);
+            }
+        }
+        requestWakeLock();
+        document.addEventListener('visibilitychange', () => {
+            if (wakeLock !== null && document.visibilityState === 'visible') {
+                requestWakeLock();
+            }
+        });
         const curloc = document.location.href;
         const curdir = curloc.substring(0, curloc.lastIndexOf('/'));
   
