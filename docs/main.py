@@ -115,6 +115,7 @@ async def main():
         c1 = pg.time.get_ticks()
         if c1 - c0 >= 300_000:
             await play_sound("forget")
+            c0 = c1
 
     pg.quit()
 
