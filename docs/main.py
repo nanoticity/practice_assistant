@@ -24,7 +24,8 @@ if __name__ == "__main__":
         "1": mixer.Sound("docs/sounds/1.ogg"),
         "2": mixer.Sound("docs/sounds/2.ogg"),
         "3": mixer.Sound("docs/sounds/3.ogg"),
-        "reset": mixer.Sound("docs/sounds/reset.ogg")
+        "reset": mixer.Sound("docs/sounds/reset.ogg"),
+        "forget": mixer.Sound("docs/sounds/are_you_forgetting_about_me?.ogg")
     }
 else:
         sounds = {
@@ -39,7 +40,8 @@ else:
         "1": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/1.ogg"),
         "2": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/2.ogg"),
         "3": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/3.ogg"),
-        "reset": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/reset.ogg")
+        "reset": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/reset.ogg"),
+        "forget": mixer.Sound("/lib/python3.12/site-packages/assistant/docs/sounds/are_you_forgetting_about_me?.ogg")
     }
 
 
@@ -64,6 +66,7 @@ def text(text, pos, size, color):
 async def main():
     run = True
     count = 0
+    c0 = pg.time.get_ticks()
 
     while run:
         for event in pg.event.get():
@@ -109,6 +112,9 @@ async def main():
         if count == -5:
             count = 0
             await asyncio.sleep(1)
+        c1 = pg.time.get_ticks()
+        if c1 - c0 >= 300_000:
+            await play_sound("forget")
 
     pg.quit()
 
