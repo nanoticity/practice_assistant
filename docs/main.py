@@ -75,11 +75,13 @@ async def main():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_RETURN:
                     count += 1
+                    c0 = c1
                     if count >= 0:
                         await play_sound(str(count))
                     else:
                         await play_sound(f"negative_{abs(count)}")
                 if event.key == pg.K_SPACE:
+                    c0 = c1
                     if count > 0:
                         count = 0
                         await play_sound("reset")
